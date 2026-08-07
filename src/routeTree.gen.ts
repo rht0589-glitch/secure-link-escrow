@@ -10,33 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as BuyerRouteImport } from './routes/buyer'
+import { Route as DeliveryRouteImport } from './routes/delivery'
+import { Route as DisputeRouteImport } from './routes/dispute'
+import { Route as EscrowRouteImport } from './routes/escrow'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as TrustEngineRouteImport } from './routes/trust-engine'
+import { Route as SellerIndexRouteImport } from './routes/seller.index'
+import { Route as SellerNewRouteImport } from './routes/seller.new'
+import { Route as SellerWalletRouteImport } from './routes/seller.wallet'
+import { Route as TxnTxnIdRouteImport } from './routes/txn.$txnId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuyerRoute = BuyerRouteImport.update({
+  id: '/buyer',
+  path: '/buyer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeliveryRoute = DeliveryRouteImport.update({
+  id: '/delivery',
+  path: '/delivery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisputeRoute = DisputeRouteImport.update({
+  id: '/dispute',
+  path: '/dispute',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EscrowRoute = EscrowRouteImport.update({
+  id: '/escrow',
+  path: '/escrow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrustEngineRoute = TrustEngineRouteImport.update({
+  id: '/trust-engine',
+  path: '/trust-engine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SellerIndexRoute = SellerIndexRouteImport.update({
+  id: '/seller/',
+  path: '/seller/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SellerNewRoute = SellerNewRouteImport.update({
+  id: '/seller/new',
+  path: '/seller/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SellerWalletRoute = SellerWalletRouteImport.update({
+  id: '/seller/wallet',
+  path: '/seller/wallet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TxnTxnIdRoute = TxnTxnIdRouteImport.update({
+  id: '/txn/$txnId',
+  path: '/txn/$txnId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/buyer': typeof BuyerRoute
+  '/delivery': typeof DeliveryRoute
+  '/dispute': typeof DisputeRoute
+  '/escrow': typeof EscrowRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/trust-engine': typeof TrustEngineRoute
+  '/seller/new': typeof SellerNewRoute
+  '/seller/wallet': typeof SellerWalletRoute
+  '/txn/$txnId': typeof TxnTxnIdRoute
+  '/seller/': typeof SellerIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/buyer': typeof BuyerRoute
+  '/delivery': typeof DeliveryRoute
+  '/dispute': typeof DisputeRoute
+  '/escrow': typeof EscrowRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/trust-engine': typeof TrustEngineRoute
+  '/seller/new': typeof SellerNewRoute
+  '/seller/wallet': typeof SellerWalletRoute
+  '/txn/$txnId': typeof TxnTxnIdRoute
+  '/seller': typeof SellerIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/buyer': typeof BuyerRoute
+  '/delivery': typeof DeliveryRoute
+  '/dispute': typeof DisputeRoute
+  '/escrow': typeof EscrowRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/trust-engine': typeof TrustEngineRoute
+  '/seller/new': typeof SellerNewRoute
+  '/seller/wallet': typeof SellerWalletRoute
+  '/txn/$txnId': typeof TxnTxnIdRoute
+  '/seller/': typeof SellerIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/buyer'
+    | '/delivery'
+    | '/dispute'
+    | '/escrow'
+    | '/login'
+    | '/register'
+    | '/trust-engine'
+    | '/seller/new'
+    | '/seller/wallet'
+    | '/txn/$txnId'
+    | '/seller/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/buyer'
+    | '/delivery'
+    | '/dispute'
+    | '/escrow'
+    | '/login'
+    | '/register'
+    | '/trust-engine'
+    | '/seller/new'
+    | '/seller/wallet'
+    | '/txn/$txnId'
+    | '/seller'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/buyer'
+    | '/delivery'
+    | '/dispute'
+    | '/escrow'
+    | '/login'
+    | '/register'
+    | '/trust-engine'
+    | '/seller/new'
+    | '/seller/wallet'
+    | '/txn/$txnId'
+    | '/seller/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  BuyerRoute: typeof BuyerRoute
+  DeliveryRoute: typeof DeliveryRoute
+  DisputeRoute: typeof DisputeRoute
+  EscrowRoute: typeof EscrowRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
+  TrustEngineRoute: typeof TrustEngineRoute
+  SellerNewRoute: typeof SellerNewRoute
+  SellerWalletRoute: typeof SellerWalletRoute
+  TxnTxnIdRoute: typeof TxnTxnIdRoute
+  SellerIndexRoute: typeof SellerIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +208,108 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buyer': {
+      id: '/buyer'
+      path: '/buyer'
+      fullPath: '/buyer'
+      preLoaderRoute: typeof BuyerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delivery': {
+      id: '/delivery'
+      path: '/delivery'
+      fullPath: '/delivery'
+      preLoaderRoute: typeof DeliveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dispute': {
+      id: '/dispute'
+      path: '/dispute'
+      fullPath: '/dispute'
+      preLoaderRoute: typeof DisputeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escrow': {
+      id: '/escrow'
+      path: '/escrow'
+      fullPath: '/escrow'
+      preLoaderRoute: typeof EscrowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trust-engine': {
+      id: '/trust-engine'
+      path: '/trust-engine'
+      fullPath: '/trust-engine'
+      preLoaderRoute: typeof TrustEngineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seller/': {
+      id: '/seller/'
+      path: '/seller'
+      fullPath: '/seller/'
+      preLoaderRoute: typeof SellerIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seller/new': {
+      id: '/seller/new'
+      path: '/seller/new'
+      fullPath: '/seller/new'
+      preLoaderRoute: typeof SellerNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seller/wallet': {
+      id: '/seller/wallet'
+      path: '/seller/wallet'
+      fullPath: '/seller/wallet'
+      preLoaderRoute: typeof SellerWalletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/txn/$txnId': {
+      id: '/txn/$txnId'
+      path: '/txn/$txnId'
+      fullPath: '/txn/$txnId'
+      preLoaderRoute: typeof TxnTxnIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  BuyerRoute: BuyerRoute,
+  DeliveryRoute: DeliveryRoute,
+  DisputeRoute: DisputeRoute,
+  EscrowRoute: EscrowRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
+  TrustEngineRoute: TrustEngineRoute,
+  SellerNewRoute: SellerNewRoute,
+  SellerWalletRoute: SellerWalletRoute,
+  TxnTxnIdRoute: TxnTxnIdRoute,
+  SellerIndexRoute: SellerIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
